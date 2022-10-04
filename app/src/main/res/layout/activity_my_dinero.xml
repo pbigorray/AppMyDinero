@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Introducca cantidad a pesetas"
-        android:inputType="numberSigned"
+        android:inputType="numberDecimal"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <Space
