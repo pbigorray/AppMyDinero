@@ -1,5 +1,6 @@
 package com.pabiya.appmydinero;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -27,6 +28,7 @@ public class myDinero extends AppCompatActivity {
     EditText moneda;
     Button bEuro,bDolar,bLibra;
     ImageView image;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,5 +128,21 @@ public class myDinero extends AppCompatActivity {
     private void ocultarTeclado(){
         InputMethodManager imm=(InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(moneda.getWindowToken(),0);
+    }
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putString("eu",textEuro.getText().toString());
+        savedInstanceState.putString("do",textDolar.getText().toString());
+        savedInstanceState.putString("li",textLibra.getText().toString());
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        textEuro.setText(""+savedInstanceState.getString("eu"));
+        textDolar.setText(""+savedInstanceState.getString("do"));
+        textLibra.setText(""+savedInstanceState.getString("li"));
     }
 }
