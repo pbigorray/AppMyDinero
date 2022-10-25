@@ -1,4 +1,4 @@
-package com.pabiya.appmydinero;
+package com.pabiya.appmydinerov2;
 
 import org.junit.Test;
 

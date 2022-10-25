@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".myDinero">
+    tools:context=".myDineroV2">
 
     <TextView
         android:id="@+id/textView"
@@ -75,33 +75,80 @@
 
         <Button
             android:id="@+id/buttonEuro"
-            android:layout_width="match_parent"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Euro" />
 
         <Button
             android:id="@+id/buttonDolar"
-            android:layout_width="match_parent"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Dolar" />
 
         <Button
             android:id="@+id/buttonLibra"
-            android:layout_width="match_parent"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Libra" />
 
+        <Button
+            android:id="@+id/port"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Port" />
+
     </LinearLayout>
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="invisible" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/chdolar"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="chdolar" />
+
+        <EditText
+            android:id="@+id/chdolarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="4"
+            android:inputType="numberDecimal"
+            android:maxLength="7"
+            android:minHeight="48dp"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/chlibra"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="chlibra" />
+
+        <EditText
+            android:id="@+id/chlibraText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="4"
+            android:inputType="numberDecimal"
+            android:maxLength="7"
+            android:textAlignment="center" />
+    </LinearLayout>
 
     <Space
         android:layout_width="match_parent"
