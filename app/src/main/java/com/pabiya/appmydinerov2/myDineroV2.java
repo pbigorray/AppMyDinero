@@ -9,7 +9,10 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.ConfigurationInfo;
 import android.content.res.Configuration;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -210,6 +213,25 @@ public class myDineroV2 extends AppCompatActivity {
         textEuro.setText(""+savedInstanceState.getString("eu"));
         textDolar.setText(""+savedInstanceState.getString("do"));
         textLibra.setText(""+savedInstanceState.getString("li"));
+
+        Configuration config = myDineroV2.this.getResources().getConfiguration();
+        if (config.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            Toast t= Toast.makeText(this, "Portaint", Toast.LENGTH_SHORT);
+            t.setGravity(Gravity.CENTER,0,0);
+            t.show();
+        }else{
+            Toast t= Toast.makeText(this, "Landscape", Toast.LENGTH_SHORT);
+            t.setGravity(Gravity.CENTER,0,0);
+            t.show();
+        }
+        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.O){
+            v.vibrate(VibrationEffect.createOneShot(500,VibrationEffect.DEFAULT_AMPLITUDE));
+            Toast.makeText(this, "Vibraaaaaaaa", Toast.LENGTH_SHORT).show();
+        }else {
+            v.vibrate(500);
+            Toast.makeText(this, "No furula >:(", Toast.LENGTH_SHORT).show();
+        }
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
